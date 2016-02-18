@@ -15,10 +15,8 @@ router.post('/', function(req, res, next) {
 			res.sendStatus(401);
 		} else {
 			req.session.userId = user._id;
-			res.sendStatus(200)
+			res.status(200).json(user)
 		}
-		
-
 	})
 	.then(null, next);
 

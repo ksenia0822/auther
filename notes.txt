@@ -69,6 +69,14 @@ Directives can have parent scope (controller's scope) or their own isolate scope
 		return !this._id
 	};
 
+Session object:
+
+session Session {
+  cookie:
+   { path: '/',
+     _expires: null,
+     originalMaxAge: null,
+     httpOnly: true }
 
 
 

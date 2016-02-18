@@ -28,6 +28,8 @@ app.use('/login', require('../api/login.router'));
 
 app.use('/signup', require('../api/signup.router'));
 
+app.use('/', require('../api/logout.router'));
+
 var validFrontendRoutes = ['/', '/stories', '/users', '/stories/:id', '/users/:id', '/signup', '/login'];
 var indexPath = path.join(__dirname, '..', '..', 'public', 'index.html');
 validFrontendRoutes.forEach(function (stateRoute) {

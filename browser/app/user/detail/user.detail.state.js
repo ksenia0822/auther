@@ -13,3 +13,15 @@ app.config(function ($stateProvider) {
 		}
 	});
 });
+
+
+/* 
+
+1. Get to home page
+2. Is this a new user?
+	YES: stay in home page
+	NO: got to user.detail. state
+
+home state, user.detail state
+
+*/
