@@ -1,0 +1,68 @@
+Story:
+_id: unique
+title: required, unique
+
+User:
+_id: unique
+email: required
+
+Factories:
+
+
+Story factory:
+getUrl: concatinates Story.url and the id into one string and returns it
+
+isNew: !this._id not sure???
+
+fetch: sends http get request passing the url that getUrl created, gets a promise and createsa new instance of a Story model passing in the data from response (res.data)
+
+fetchAll: sends http get request passing in '/api/stories/' (Story.url). Gets the promis and maps the res.data to create new Story(obj) on each element on res.data. 
+
+save: if this is new (???) sets url to '/api/stories/' and verb to 'post', else sets url to '/api/stories/' + this._id and verb to 'put'. Returns either httl post or put request depending ont he result, passing url adn this, gets the promise and creates new Story passing res.data. 
+
+destroy: sends the delete http request passing the url from getUrl.
+
+
+URL Users
+We are redirected to the state /users. Browser renders '/browser/app/user/list/user.list.html' template using UserList controller.
+
+Directives
+
+userItem directive: E. Renders '/browser/app/user/item/user.item.html'. Has user, glyphicon and iconClick on the scope. Has link function
+
+footer directive: E, renders  '/browser/components/footer/footer.html'
+
+navbar directive: E, renders /browser/components/navbar/navbar.html'. Link has pathStartWithStatePath function that does what????
+
+oath-button directive: has providerName on its scope
+
+User X Button
+- x button triggers removeUser() from the directive. removeUser() calls destroy() function from user.factory. destry() sends http delete request to backend. Backend removes the user from the database.
+
+
+PUT request
+- Click on plus buttom on user.detail.html
+- It triggers "addStory()" from user.detail controller
+
+
+Questions:
+- What does pathStartsWithStatePath in navbar directive does?
+
+- What is $state.href?
+
+- What does this mean:
+	app.directive('oauthButton', function () {
+		return {
+			scope: {
+				providerName: '@'
+			}
+		}	
+	})
+
+- What is:
+	User.prototype.isNew = function () {
+		return !this._id
+	};
+
+
+
