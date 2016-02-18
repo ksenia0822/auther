@@ -10,10 +10,11 @@ app.factory('User', function ($http, Story) {
 	User.prototype.getUrl = function () {
 		return User.url + this._id;
 	};
-
+	//return true if user has not been saved to the database and false otherwise
 	User.prototype.isNew = function () {
 		return !this._id
 	};
+
 
 	User.prototype.fetch = function () {
 		return $http.get(this.getUrl())

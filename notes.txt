@@ -48,7 +48,10 @@ PUT request
 Questions:
 - What does pathStartsWithStatePath in navbar directive does?
 
-- What is $state.href?
+$location.path() and path.startsWith(partial) are build in $location.
+$location.path()` returns a string (the actual path). the `.startsWith()` that is called is a built in JS string method 
+
+- What is $state.href? Returns href (path) of the state that you created e.g. url: '/users/:id'
 
 - What does this mean:
 	app.directive('oauthButton', function () {
@@ -59,10 +62,15 @@ Questions:
 		}	
 	})
 
+Directives can have parent scope (controller's scope) or their own isolate scope. 
+
 - What is:
 	User.prototype.isNew = function () {
 		return !this._id
 	};
+
+
+
 
 
 

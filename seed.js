@@ -1,5 +1,7 @@
 'use strict';
 
+//chance is a library to generate random data
+
 var chance = require('chance')(123),
 	_ = require('lodash'),
 	Promise = require('bluebird');
